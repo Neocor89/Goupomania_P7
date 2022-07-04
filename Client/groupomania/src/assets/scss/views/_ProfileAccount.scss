@@ -1,0 +1,60 @@
+.ProfileAccount_info {
+  @include center-in-column;
+}
+
+.ProfileAccount_info span {
+  font-family: $font-tercary;
+  font-weight: $w600;
+  font-size: $fSize-medium;
+}
+
+.ProfileAccount_inscription p {
+  font-size: $fSize-classic;
+  font-family: $font-primary;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-bottom: 0;
+  @include phone-screen {
+    font-size: $fSize-medium;
+    margin-top: 25px;
+  }
+}
+
+.ProfileAccount_title {
+  padding: 70px 0 15px 0;
+  font-family: $font-primary;
+  font-weight: $w700;
+  letter-spacing: 0px;
+  font-size: 1.82rem;
+  @include phone-screen {
+   font-size: $fSize-text; 
+  }
+}
+
+.ProfileAccount_date-inscription {
+  font-family: $font-primary;
+  font-weight: $w500;
+}
+
+.ProfileAccount_data {
+  @include phone-screen {
+    width: 150px;
+  }
+}
+
+.ProfileAccount_delete {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 7px;
+  background:  $col-danger;
+  color: $light;
+  font-family: $font-primary;
+  font-weight: $w600;
+  @include phone-screen {
+    width: 200px;
+    font-size: .9rem;
+    padding: 12px;
+  }
+}
+

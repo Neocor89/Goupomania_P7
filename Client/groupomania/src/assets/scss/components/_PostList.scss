@@ -1,0 +1,97 @@
+.fa-solid.fa-user-tie:hover {
+  color:  $btn-navLink;
+}
+
+.far.fa-edit:hover {
+  color:  $btn-navLink;
+}
+
+i.fa-solid.fa-power-off:hover {
+  color:  $btn-navLink;
+}
+
+.Postlist__page {
+  @include center-in-column;
+  margin: 3rem 0;
+  @include phone-screen {
+   margin-left: 12px;
+   margin-right: 12px; 
+  }
+}
+
+.Postlist__container {
+  @include post-background;
+  @include phone-screen {
+    
+  }
+}
+
+.Postlist__component {
+  border-radius: .45rem;
+  margin-bottom: 40px;
+  @include phone-screen {
+    min-width: 99%;
+  }
+}
+
+.employe_info {
+  font-size: $fSize-classic;
+  margin-left: 15px;
+  font-weight: $w500;
+  font-family: $font-tercary;
+  @include phone-screen {
+    margin: 0 10px 0 0;
+    font-size: $fSize-small;
+  }
+}
+
+.employee_avatar {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin: 5px 0 5px 0;
+  @include phone-screen {
+  }
+}
+
+.Postlist__title {
+  font-weight: $w700;
+  font-family: $font-primary;
+  font-size: $fSize-medium;
+  @include phone-screen {
+    margin: 10px 0 20px 0;
+  }
+}
+
+.Postlist__content {
+  font-family: $font-primary;
+  @include phone-screen {
+    font-size: $fSize-medium;
+  }
+}
+
+
+.delete_post {
+  text-decoration: none;
+  width: 12%;
+  padding: 5px;
+  border: 2px solid $col-danger;
+  display: flex;
+  border-radius: 9px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  @include phone-screen {
+    border: 1px solid $col-danger;
+    border-radius: 9rem;
+    padding: 10px 30px;
+
+  }
+}
+
+.delete_post i {
+  color: $col-danger;
+  font-size: 1.2rem;
+  padding: 10px;
+  cursor: pointer;
+}

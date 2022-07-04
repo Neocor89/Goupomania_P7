@@ -1,0 +1,69 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; 
+}
+
+nav {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  font-weight: $w700;
+  margin-left: 12px;
+}
+
+:where(input#password, input#email) {
+  padding-left: 10px;
+  font-size: .9rem;
+}
+
+.login_component {
+  @include body-background;
+  @include phone-screen {
+    width: 100%;
+  }
+}
+
+img {
+@include login-logo;
+  @include phone-screen {
+    width: 320px;
+  }
+}
+
+.slogan_position {
+  padding: 55px 0 40px 0;
+  font-family: $font-tercary;
+  font-size: 1.6rem;
+  font-weight: $w800;
+  @include phone-screen {
+    padding: 25px 0 45px 0; 
+    font-size: 1.45rem;
+  }
+}
+
+.login_label {
+  @include label-style;
+}
+
+.login_input {
+  @include layout-form-field;
+}
+
+.btn_connect {
+  @include submit-btn;
+}
+
+.login_link {
+  font-family: $font-primary;
+  // font-size: $fSize-small;
+  // font-weight: $w600;
+}
+
+nav a:hover {
+  color: $link-account;
+}

@@ -1,0 +1,65 @@
+.SignUp_page {
+  @include body-background;
+}
+
+.SignUp_page-logo {
+  height: 65px;
+  width: 270px;
+  margin: 15px 0 50px 0;
+  @include phone-screen {
+    @include responsive-size-logo;
+    margin-right: 15px;
+  }
+}
+
+.SignUp_page-title {
+  font-family: $font-tercary;
+  font-size: 1.7rem;
+  font-weight: $w800;
+  padding-bottom: 50px;
+  @include phone-screen {
+    font-size: 1.3rem;
+  }
+}
+
+.SignUp_page-slogan {
+  font-family: $font-primary;
+  font-weight: $w800;
+  font-size: 1.4rem;
+  padding-bottom: 30px;
+  @include phone-screen {
+    font-size: 1.2rem;
+  }
+}
+
+.SignUp_page-field {
+  @include layout-form-field;
+}
+
+.SignUp_page-label {
+  @include label-style;
+  @include phone-screen {
+    padding-top: 0;
+  }
+}
+
+.SignUp_page-link {
+  font-family: $font-primary;
+  font-size: 1rem;
+}
+
+.SignUp_page-link a {
+  text-decoration: none;
+  @include phone-screen {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+.SignUp_page-submit {
+  @include phone-screen {
+    @include submit-btn;
+    margin-bottom: 0;
+  }
+}

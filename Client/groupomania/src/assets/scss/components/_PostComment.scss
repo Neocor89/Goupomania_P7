@@ -1,0 +1,85 @@
+@include phone-screen {
+    
+}
+
+.PostComment_info-container {
+  background: #494848;
+  display: flex;
+  align-items: center;
+  // justify-content: space-evenly;
+}
+
+.PostComment_info-creation {
+  font-family: $font-primary;
+  font-weight: $w600;
+  height: 40px;
+  background: #3fdd2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 2;
+  margin-top: 10px;
+  
+}
+
+.PostComment_data-employee {
+  display: flex;
+  align-items: center;
+
+
+}
+
+.PostComment_logoUser {
+  font-size: $fSize-medium;
+  padding: 0 20px;
+  @include phone-screen {
+    font-size: $fSize-logo;
+  }
+}
+.PostComment_link {
+  flex-basis: 50px;
+  color: $col-danger;
+}
+
+.PostComment_area {
+  @include phone-screen {
+    width: 100%;
+  }
+}
+
+.PostComment_text {
+background: rgb(207, 122, 122);
+}
+
+textarea {
+  height: 70px;
+  width: 100%;
+  line-height: 55px;
+}
+
+textarea::placeholder {
+  font-weight: $w400;
+  font-family: $font-primary
+}
+
+.PostComment_submit {
+  @include submit-btn-responsive;
+  width: 18%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 1.1rem; 
+  @include phone-screen {
+    width: 40%; 
+    @include submit-btn-responsive;
+    // background: #3fdd2a; 
+    padding: 4px;
+    
+  }
+
+}
+
+
+
+// .PostComment_delete-option {
+  
+// }
