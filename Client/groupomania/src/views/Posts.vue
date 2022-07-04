@@ -27,11 +27,11 @@
           v-model="inputMessage.content"
           placeholder="Quoi de neuf ?">
         </textarea>
-        <label for="image" class="Posts_create-title">Image</label>
-        <input type="file" placeholder="upload image" />
+        <label for="image" class="Posts_create-image">Image</label>
+        <input type="file" placeholder="importer une image" />
       </form>
         </div>
-      <button title="Publier" v-on:click="sendMessage">Publier</button>
+      <button title="Publier" @click="sendMessage" class="Posts_import-image">Publier</button>
     </div>
   </section>
 </template>

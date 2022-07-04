@@ -76,5 +76,17 @@
 }
 
 .Posts_form-text-field {
+  font-family: $font-primary;
   margin-bottom: 20px;
+}
+
+.Posts_create-image {
+  @include label-style;
+
+}
+
+.Posts_import-image {
+  @include phone-screen {
+  
+  }
 }

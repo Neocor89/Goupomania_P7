@@ -42,7 +42,7 @@
         ></textarea>
         <!--  v-if="comment.userId == userId" ajouté à PostComment_submit + PostComment_text -->
       
-      <button class="PostComment_submit" title="Poster" v-if="comment.userId == userId" @click="createComment()">
+      <button class="PostComment_submit" title="Commenter" v-if="comment.userId == userId" @click="createComment()">
         Envoi
       </button>
     </div>
