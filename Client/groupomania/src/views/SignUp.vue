@@ -1,4 +1,7 @@
 <template>
+  <!-- 
+    SIGNUP COMPONENT 
+  -->
   <div class="SignUp_page">
     <img src="../assets/images/logo-signup-page.png" alt="Logo groupomania page inscription" class="SignUp_page-logo">
     <h2 class="SignUp_page-title">Gardez le contact entre collèges</h2>

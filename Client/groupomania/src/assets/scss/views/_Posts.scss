@@ -1,0 +1,80 @@
+.Posts_component {
+  width: 100%;
+  // @include nav-background;
+  @include phone-screen {
+    // max-width: 95%; 
+    
+  }
+  
+}
+
+.Posts_page {
+  width: 600px;
+  margin: 0 auto;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  @include phone-screen {
+    width: 99%;
+  }
+  
+  // @include body-background;
+  // margin-top: 100px;
+  // border-top: 1px solid #333;
+  
+}
+
+.Posts_form {
+  @include phone-screen {
+    width: 97%;
+    margin: 0 auto;
+    
+  }
+}
+
+.Posts_title {
+  font-size: $fsize-title;
+  font-weight: $w700;
+  font-family: $font-primary;
+  padding: 60px 0 50px 0;
+  @include phone-screen {
+    font-size: $fSize-logo
+  }
+}
+
+@include phone-screen {
+  
+}
+
+.Posts_create-title {
+  font-family: $font-tercary;
+  padding-bottom: 10px;
+  font-weight: $w700;
+  font-size: $fSize-classic;
+  @include phone-screen {
+    @include label-style;
+
+  }
+
+}
+
+.Posts_create-content {
+  font-family: $font-tercary;
+  padding: 20px 0 10px 0;
+  font-weight: $w700;
+  font-size: $fSize-classic;
+  @include phone-screen {
+    @include label-style;
+  }
+
+}
+
+.Posts_form-title-field {
+  font-family: $font-primary;
+  line-height: 32px;
+}
+
+.Posts_form-text-field {
+  margin-bottom: 20px;
+}

@@ -1,33 +1,36 @@
 <template>
-  <section>
+  <section class="Posts_component">
     <Navigation></Navigation>
-    <div class="blocsignup">
-      <h3>Créer une publication</h3>
+    <div class="Posts_page">
+      <h1 class="Posts_title">Créer une publication</h1>
+        <div class="form-group Posts_form">
       <form id="form-signup">
-        <label for="title">Titre du message :</label>
+        <label for="title" class="Posts_create-title">Titre</label>
         <input
           type="text"
           id="title"
           name="title"
-          placeholder="Titre"
-          class="form-control"
+          placeholder="Titre du message"
+          class="form-control mb-2 Posts_form-title-field"
           required
           v-model="inputMessage.title"
         />
-        <input
+        <label for="title" class="Posts_create-content ">Message</label>
+        <textarea
           type="text"
           title="Quoi de neuf?"
           id="content"
           name="content"
-          rows="10"
-          class="form-control"
+          rows="8"
+          class="form-control Posts_form-text-field"
           required
           v-model="inputMessage.content"
-          placeholder="Quoi de neuf ?"
-        />
-        <label for="image" class="new-post_form-label">Image</label>
+          placeholder="Quoi de neuf ?">
+        </textarea>
+        <label for="image" class="Posts_create-title">Image</label>
         <input type="file" placeholder="upload image" />
       </form>
+        </div>
       <button title="Publier" v-on:click="sendMessage">Publier</button>
     </div>
   </section>
@@ -92,3 +95,19 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+
+/* ----------------------------
+:: Imports utils scss folders ::
+---------------------------- */
+@import "../assets/scss/utils/_variables.scss";
+@import "@/assets/scss/utils/_mixins.scss";
+@import "@/assets/scss/utils/_breakpoints.scss";
+
+/* -------------------------
+:: Imports scss Component :: 
+------------------------- */
+@import "@/assets/scss/views/_Posts.scss";
+
+</style>

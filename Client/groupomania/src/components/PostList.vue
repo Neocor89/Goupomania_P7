@@ -8,7 +8,7 @@
           Remplacement pour le responsive
           <i class="fas fa-user-circle employee_avatar"> </i> 
           -->
-        <div class="textdate">
+        <div>
         <span class="employe_info card-title"
           >{{ message.user.firstname }} {{ message.user.lastname }}</span
         >

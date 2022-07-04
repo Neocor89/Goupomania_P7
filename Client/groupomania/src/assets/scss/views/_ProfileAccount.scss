@@ -5,7 +5,7 @@
 .ProfileAccount_info span {
   font-family: $font-tercary;
   font-weight: $w600;
-  font-size: $fSize-medium;
+  font-size: 1rem;
 }
 
 .ProfileAccount_inscription p {
@@ -16,19 +16,19 @@
   margin-top: 15px;
   margin-bottom: 0;
   @include phone-screen {
-    font-size: $fSize-medium;
+    font-size: $fSize-small;
     margin-top: 25px;
   }
 }
 
 .ProfileAccount_title {
-  padding: 70px 0 15px 0;
+  padding: 50px 0 15px 0;
   font-family: $font-primary;
   font-weight: $w700;
   letter-spacing: 0px;
   font-size: 1.82rem;
   @include phone-screen {
-   font-size: $fSize-text; 
+   font-size: $fSize-logo; 
   }
 }
 

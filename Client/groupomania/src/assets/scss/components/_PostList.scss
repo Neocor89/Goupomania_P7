@@ -65,15 +65,16 @@ i.fa-solid.fa-power-off:hover {
 
 .Postlist__content {
   font-family: $font-primary;
+  font-size: $fSize-medium;
   @include phone-screen {
-    font-size: $fSize-medium;
+    font-size: $fSize-small;
   }
 }
 
 
 .delete_post {
   text-decoration: none;
-  width: 12%;
+  width: 9%;
   padding: 5px;
   border: 2px solid $col-danger;
   display: flex;
@@ -84,7 +85,7 @@ i.fa-solid.fa-power-off:hover {
   @include phone-screen {
     border: 1px solid $col-danger;
     border-radius: 9rem;
-    padding: 10px 30px;
+    padding: 2px 25px;
 
   }
 }

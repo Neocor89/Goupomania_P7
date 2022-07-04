@@ -20,14 +20,14 @@
       <a class="PostComment_link">
         <i
           class="fas fa-trash-alt PostComment_delete-option"
-          
+           v-if="comment.userId == userId || isAdmin == true"
           @click="deleteComment(comment.id)"
           title="suppression administrateur"
         >
         </i>
       </a>
     </div>
-<!-- v-if="comment.userId == userId || isAdmin == true" => enlevé pour css remettre en ligne 16 -->
+<!-- v-if="comment.userId == userId || isAdmin == true" => enlevé pour css remettre en dessous PostComment_delete-option -->
     <div class="PostComment_area">
     
         <textarea
@@ -36,14 +36,14 @@
           name="content"
           class="form-control PostComment_text"
           v-model="content"
-          
+          v-if="comment.userId == userId"
           placeholder="Espace commentaire"
           required
         ></textarea>
         <!--  v-if="comment.userId == userId" ajouté à PostComment_submit + PostComment_text -->
       
-      <button class="PostComment_submit" title="Poster"  @click="createComment()">
-        Post
+      <button class="PostComment_submit" title="Poster" v-if="comment.userId == userId" @click="createComment()">
+        Envoi
       </button>
     </div>
   </div>
