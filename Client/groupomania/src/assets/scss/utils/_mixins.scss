@@ -94,6 +94,29 @@ padding-right: 30px;
   // margin: 25px 0 30px 0;
 }
 
+@mixin modal-btn-responsive {
+  // background: linear-gradient(to bottom right, $gradient-btn, $col-prim);
+  border: none;
+  // border-radius: 5rem;
+  color: $light;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $button-size;
+  font-weight: $w500;
+  font-family: $font-tercary;
+  // line-height: 1;
+  padding: 6px 15px;
+  outline: transparent;
+  margin: .8rem 0 .1rem 0;
+  text-align: $centered;
+  text-decoration: $nothing;
+  transition: box-shadow .2s ease-in-out;
+  user-select: $nothing;
+  -webkit-user-select: $nothing;
+  white-space: nowrap;
+  // margin: 25px 0 30px 0;
+}
+
 
 
 /* -------------------
@@ -111,8 +134,8 @@ padding-right: 30px;
       @content;
   }
 }
-@mixin phonescrenn {
-  @media screen and (max-width: map-get($breakpoints, phone-screen)) {
+@mixin tablet-screen {
+  @media screen and (max-width: map-get($breakpoints, lg-screen)) {
       @content;
   }
 }

@@ -13,9 +13,11 @@ i.fa-solid.fa-power-off:hover {
 .Postlist__page {
   @include center-in-column;
   margin: 3rem 0;
+  @include tablet-screen {
+    margin: 5rem 0;
+  }
   @include phone-screen {
-   margin-left: 12px;
-   margin-right: 12px; 
+    margin: 4rem 12px 0 12px;
   }
 }
 
@@ -71,8 +73,7 @@ i.fa-solid.fa-power-off:hover {
   }
 }
 
-
-.delete_post {
+.Postlist__delete_post {
   text-decoration: none;
   width: 9%;
   padding: 5px;
@@ -82,17 +83,24 @@ i.fa-solid.fa-power-off:hover {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  @include tablet-screen {
+    border: 1px solid #f32b2b9a;
+    width: 10%;
+    padding: 3px;
+  }
   @include phone-screen {
     border: 1px solid $col-danger;
     border-radius: 9rem;
     padding: 2px 25px;
-
   }
 }
-
-.delete_post i {
+.Postlist__delete_post i {
   color: $col-danger;
-  font-size: 1.2rem;
+  font-size: $fSize-classic;
   padding: 10px;
   cursor: pointer;
+  @include phone-screen {
+    font-size: $fSize-small;
+    padding: 12px 0;
+  }
 }

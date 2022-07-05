@@ -1,28 +1,17 @@
 .Posts_component {
   width: 100%;
-  // @include nav-background;
-  @include phone-screen {
-    // max-width: 95%; 
-    
-  }
-  
 }
+
+// @include phone-screen {
+  
+// }
 
 .Posts_page {
   width: 600px;
   margin: 0 auto;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
   @include phone-screen {
     width: 99%;
-  }
-  
-  // @include body-background;
-  // margin-top: 100px;
-  // border-top: 1px solid #333;
-  
+  }  
 }
 
 .Posts_form {
@@ -43,31 +32,27 @@
   }
 }
 
-@include phone-screen {
-  
-}
-
 .Posts_create-title {
   font-family: $font-tercary;
+  font-size: $fSize-logo;
   padding-bottom: 10px;
   font-weight: $w700;
-  font-size: $fSize-classic;
   @include phone-screen {
+    font-size: $fSize-classic;
     @include label-style;
 
   }
-
 }
 
 .Posts_create-content {
   font-family: $font-tercary;
+  font-size: $fSize-logo;
   padding: 20px 0 10px 0;
   font-weight: $w700;
-  font-size: $fSize-classic;
   @include phone-screen {
+    font-size: $fSize-classic;
     @include label-style;
   }
-
 }
 
 .Posts_form-title-field {
@@ -78,15 +63,77 @@
 .Posts_form-text-field {
   font-family: $font-primary;
   margin-bottom: 20px;
+  @include phone-screen {
+    height: 150px;
+    margin-bottom: 10px;
+  }
+}
+
+.Posts_upload-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="file"] {
+  font-weight: $w500;
+    font-size: .3rem;
+    font-family: $font-primary;
 }
 
 .Posts_create-image {
-  @include label-style;
+  font-family: $font-tercary;
+  font-size: $fSize-logo;
+  font-weight: $w700;
+  position: relative;
+  // background: rgb(95, 94, 94);
+  display: flex;
+  height: 130px;
+  @include tablet-screen {
+    padding-top: 25px;
+  }
+  @include phone-screen {
+    font-size: $fSize-classic;
+    @include label-style;
+  }
+}
+
+.Posts_upload-icon {
+  position: absolute;
+  cursor: pointer;
+  // background: #ec4242;
+  top: 55px;
+  left: 75px;
+  font-size: 2.5rem;
+  @include tablet-screen {
+    top: 65px;
+  }
+  @include phone-screen {
+    font-size: 2.1rem;
+    left: 59px;
+  }
+}
+
+#image {
+  // background: #1edf85;
+  position: absolute;
+  display: none !important;
 
 }
 
-.Posts_import-image {
+.Posts_publish-image {
+  @include submit-btn;
+  padding: 0 45px;
+  font-size: 1.21rem;
+  @include tablet-screen {
+    margin-top: 40px;
+    padding: 0 50px;
+  }
   @include phone-screen {
-  
+    padding-right: 30px;
+    padding-left: 30px;
+    font-weight: $w500;
+    font-size: $button-size;
   }
 }

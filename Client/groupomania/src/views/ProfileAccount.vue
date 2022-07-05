@@ -11,29 +11,37 @@
         <br>
         <span class="card-header col-md-4 ProfileAccount_data"> {{ userAccount.lastname }} </span>
       </div>
+      <div>
+      <ModalSlot v-show="isModalVisible" @close="closeModal" infoGroupomania="Souhaitez vous supprimer votre compte ?" />
+      </div>
       <div class="ProfileAccount_inscription">
       <p class="card-body ProfileAccount_date-inscription">
         Vous êtes inscrit depuis le :
         <span class="card-body">{{ userAccount.createdAt | moment("DD.MM.YY") }}</span>
       </p>
       </div>
-      <button @click="deleteAccount" class="ProfileAccount_delete">
-        Supprimez votre compte
-      </button>
+      <div @click="showModal"> <!-- VERIFIER SI FONCTIONNE -->
+        <button @click="deleteAccount" class="ProfileAccount_delete">
+          Supprimez votre compte
+        </button>
+      </div>
     </div>
   </section>
 </template> 
 
 <script>
 import Navigation from "../components/Navigation";
+import ModalSlot from "../components/ModalSlot";
 import moment  from 'moment/dist/moment'
 export default {
   components: {
     Navigation,
+    ModalSlot,
   },
   name: "ProfileAccount",
   data() {
     return {
+      isModalVisible: false, //: Lien Modal
       userAccount: {
         userId: localStorage.getItem("userId"),
         firstname: "",
@@ -65,9 +73,24 @@ export default {
       .catch((error) => console.log(error));
   },
   methods: {
-    moment: function () {
-        return moment();
+    showModal() {
+      //: Lien Modal
+      this.isModalVisible = true;
     },
+    closeModal() {
+      //: Lien Modal
+       this.isModalVisible = false;
+    },
+    //! TEST MOMENT SANS RESULTAT
+    changeDate: function () {
+      const postsDate = new Date();
+      moment(postsDate).format("DD.MM.YY");
+      this.printdata[0].name = postsDate;
+    },
+    created() {
+      this.changeDate();
+    },
+    //! FIN TEST MOMENT
     getOneAccount() {
       let url = `http://localhost:3000/api/auth/${this.userAccount.userId}`;
       let options = {

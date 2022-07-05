@@ -25,7 +25,7 @@
         {{ message.url_image }}
       </div>
 
-      <a class="delete_post">
+      <a class="Postlist__delete_post">
         <i
           class="fas fa-trash-alt"
           v-if="message.userId == userId || isAdmin == true"

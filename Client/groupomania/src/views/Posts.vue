@@ -27,11 +27,16 @@
           v-model="inputMessage.content"
           placeholder="Quoi de neuf ?">
         </textarea>
-        <label for="image" class="Posts_create-image">Image</label>
-        <input type="file" placeholder="importer une image" />
+        <div class="Posts_upload-image">
+          <label for="image" class="Posts_create-image">Ajouter une image
+          <i class="fa-solid fa-image Posts_upload-icon"></i>
+            <input type="file" id="image"  accept="image/png, image/jpg, image/gif, image/jpeg" placeholder="importer une image"/>
+          </label>
+            <!-- <input v-model="inputMessage.url_image"/> -->
+        </div>
       </form>
         </div>
-      <button title="Publier" @click="sendMessage" class="Posts_import-image">Publier</button>
+      <button title="Publier" @click="sendMessage" class="Posts_publish-image">Publier</button>
     </div>
   </section>
 </template>
@@ -63,16 +68,16 @@ export default {
     },
 
     sendMessage() {
-      let deliverMessage = {
+      let messagePublish = {
         title: this.inputMessage.title,
         content: this.inputMessage.content,
         userId: this.userId,
       };
-      console.log(deliverMessage);
+      console.log(messagePublish);
       let url = "http://localhost:3000/api/posts/new";
       let options = {
         method: "POST",
-        body: JSON.stringify(deliverMessage),
+        body: JSON.stringify(messagePublish),
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
           "Content-Type": "application/json",
@@ -84,7 +89,7 @@ export default {
           console.log(res);
           if (res.ok) {
             window.location.reload();
-            this.inputMessage = {}; // Retour à 0 des inputs
+            this.inputMessage = {};
           } else {
             alert("Votre Post à bien été reçu ");
           }
