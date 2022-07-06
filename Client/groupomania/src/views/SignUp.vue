@@ -17,7 +17,8 @@
           class="SignUp_page-field form-control"
           placeholder="Nom"
           required
-          pattern="^[^&amp;<>@&quot;()'!_$*€£`+=\/;?#]+$"
+          max-length = "32"
+          pattern="[A-Za-z]{1,32}"
           v-model="inputSignup.lastname"
         />
       </div>
@@ -31,7 +32,8 @@
           placeholder="Prénom"
           class="SignUp_page-field form-control"
           required
-          pattern="^[^&amp;<>@&quot;()'!_$*€£`+=\/;?#]+$"
+          max-length = "32"
+          pattern="[A-Za-z]{1,32}"
           v-model="inputSignup.firstname"
         />
       </div>
@@ -80,7 +82,7 @@
 <script>
 
 //TODO
-//TODO => REGLER V-SHOW 
+//TODO => REGLER V-SHOW || UTILISER MODAL
 //TODO => VERIF REDIRECTION PAGE SIGNUP VERS POSTS
 //TODO
 

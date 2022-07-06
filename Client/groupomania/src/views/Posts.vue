@@ -4,7 +4,7 @@
     <div class="Posts_page">
       <h1 class="Posts_title">Créer une publication</h1>
         <div class="form-group Posts_form">
-      <form id="form-signup">
+      <form id="form-signup" enctype="multipart/form-data">
         <label for="title" class="Posts_create-title">Titre</label>
         <input
           type="text"
@@ -30,7 +30,7 @@
         <div class="Posts_upload-image">
           <label for="image" class="Posts_create-image">Ajouter une image
           <i class="fa-solid fa-image Posts_upload-icon"></i>
-            <input type="file" id="image"  accept="image/png, image/jpg, image/gif, image/jpeg" placeholder="importer une image"/>
+            <input type="file" ref="image" @change="onFileSelected" id="image"  accept="image/png, image/jpg, image/gif, image/jpeg" placeholder="importer une image"/>
           </label>
             <!-- <input v-model="inputMessage.url_image"/> -->
         </div>
@@ -63,24 +63,24 @@ export default {
     console.log(this.userId);
   },
   methods: {
-    onFileSelected(event) {
-      this.selectedFile = event.target.files[0];
+    onFileSelected() {
+         this.image = this.$refs.image.files[0];
+      this.selectedFile = URL.createObjectURL(this.image)
     },
 
     sendMessage() {
-      let messagePublish = {
-        title: this.inputMessage.title,
-        content: this.inputMessage.content,
-        userId: this.userId,
-      };
-      console.log(messagePublish);
+      let formData = new FormData();
+      formData.append('file', this.selectedFile);
+      formData.append('userId', this.userId);
+      formData.append('title', this.inputMessage.title);
+      formData.append('content', this.inputMessage.content);
       let url = "http://localhost:3000/api/posts/new";
       let options = {
         method: "POST",
-        body: JSON.stringify(messagePublish),
+        body: JSON.stringify(Object.fromEntries(formData)),
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
-          "Content-Type": "application/json",
+          'Content-type': 'application/json'
         },
       };
       fetch(url, options)

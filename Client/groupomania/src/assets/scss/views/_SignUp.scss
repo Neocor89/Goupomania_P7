@@ -43,6 +43,18 @@
   }
 }
 
+input:invalid {
+  border-color: $col-danger;
+}
+
+input:invalid[type="text"]::after {
+  content: "Le Nom ou Prénom ne doit pas contenir de choffre ou caractère spécial";
+}
+
+input:invalid[type="email"]::after {
+  content: "L'email doit obligatoireùent contenir @ et .";
+}
+
 .SignUp_page-link {
   font-family: $font-primary;
   font-size: 1rem;

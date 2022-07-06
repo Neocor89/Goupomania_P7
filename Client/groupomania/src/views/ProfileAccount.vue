@@ -81,15 +81,18 @@ export default {
       //: Lien Modal
        this.isModalVisible = false;
     },
-    //! TEST MOMENT SANS RESULTAT
-    changeDate: function () {
-      const postsDate = new Date();
-      moment(postsDate).format("DD.MM.YY");
-      this.printdata[0].name = postsDate;
-    },
-    created() {
-      this.changeDate();
-    },
+     moment: function () {
+       return moment();
+    }, 
+       //! TEST MOMENT SANS RESULTAT
+    // changeDate: function () {
+    //   const postsDate = new Date();
+    //   moment(postsDate).format("DD.MM.YY");
+    //   this.printdata[0].name = postsDate;
+    // },
+    // created() {
+    //   this.changeDate();
+    // },
     //! FIN TEST MOMENT
     getOneAccount() {
       let url = `http://localhost:3000/api/auth/${this.userAccount.userId}`;

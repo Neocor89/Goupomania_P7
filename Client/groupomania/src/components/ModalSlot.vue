@@ -12,12 +12,9 @@
       </slot>
       </section>
       <footer class="ModalSlot_footer">
-      <!-- <slot name=footer>
-        En cliquant ci-dessous
-      </slot> -->
       <div class="ModalSlot_btn-choice">
-      <button type="button" class="ModalSlot_btn-valid" @clik="">Confirmer</button>
-      <button type="button" class="ModalSlot_btn-close" @clik="">Annuler</button>
+      <button type="button" class="ModalSlot_btn-valid" @click="">Confirmer</button>
+      <button type="button" class="ModalSlot_btn-close" @click="">Annuler</button>
       </div>
       </footer>
     </div>

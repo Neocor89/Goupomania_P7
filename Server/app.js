@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const path = require('path');
 const helmet = require('helmet');
 const db = require('./models');
@@ -27,8 +27,10 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     next();
 });
-
-app.use(bodyParser.json()); 
+// app.use(bodyParser.urlencoded({ extended: false }))
+// app.use(bodyParser.json()); 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
 app.use('/images', express.static(path.join(__dirname, 'images'))); 
 

@@ -15,6 +15,9 @@
   flex-direction: column;
   margin-top: 15px;
   margin-bottom: 0;
+  @include tablet-screen {
+    margin-bottom: 30px;
+  }
   @include phone-screen {
     font-size: $fSize-small;
     margin-top: 25px;
@@ -38,8 +41,11 @@
 }
 
 .ProfileAccount_data {
+  @include tablet-screen {
+    margin: 15px 0 20px 0;
+  }
   @include phone-screen {
-    width: 150px;
+    width: 220px;
   }
 }
 

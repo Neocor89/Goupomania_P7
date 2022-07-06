@@ -66,7 +66,7 @@ export default {
     };
   },
   props: {
-    // messageId: Number,
+    messageId: Number,
     messageUserId: Number,
   }, // 
   mounted() {
@@ -91,6 +91,7 @@ export default {
   },
   methods: {
     moment: function () {
+      //: Essayé this.$moment
     return moment();
   }, 
     createComment() {

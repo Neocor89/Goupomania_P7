@@ -1,6 +1,8 @@
 <template>
   <div class="Postlist__page">
-    <!-- POSTS COMPONENT -->
+    <!-- 
+      POSTS COMPONENT 
+      -->
     <div v-for="message in messages" :key="message.id" class="Postlist__component card col col-md-8">
       <div class="Postlist__container card-header">
         <img src="../assets/images/avatar-placeholder.png" alt="avatar utilisateur" class="employee_avatar">
@@ -42,7 +44,7 @@
 
 <script>
 import PostComment from './PostComment.vue'
-import moment  from 'moment/dist/moment'
+import moment  from 'moment'
 /*    */
 export default {
   name: "PostList",

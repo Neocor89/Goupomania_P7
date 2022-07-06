@@ -4,8 +4,9 @@ const db = require("../models");
 
 // Création d'un Post
 exports.createMessage = (req, res, next) => {
-  let imageUrl = req.file;
-  //: Before = let imageUrl = null;
+  let imageUrl = null;
+  console.log('ABCDE');
+  console.log(req);
   if (req.file) {
     imageUrl = `${req.protocol}://${req.get("host")}/images/${
       req.file.filename
@@ -15,8 +16,7 @@ exports.createMessage = (req, res, next) => {
     userId: req.body.userId,
     title: req.body.title,
     content: req.body.content,
-    url_image: req.body.url_image,
-    //: Before = url_image: imageUrl,
+    url_image: imageUrl,
   };
   Post.create(post)
     .then(() => res.status(201).json({ message: "Message envoyé!" }))
