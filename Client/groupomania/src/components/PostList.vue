@@ -95,7 +95,7 @@ export default {
       fetch(url, options)
         .then((response) => {
           console.log(response);
-          window.location.reload();
+          window.location.reload(showModal());
         })
         .catch((error) => console.log(error));
     },

@@ -87,7 +87,6 @@ input[type="file"] {
   font-size: $fSize-logo;
   font-weight: $w700;
   position: relative;
-  // background: rgb(95, 94, 94);
   display: flex;
   height: 130px;
   @include tablet-screen {
@@ -102,7 +101,6 @@ input[type="file"] {
 .Posts_upload-icon {
   position: absolute;
   cursor: pointer;
-  // background: #ec4242;
   top: 55px;
   left: 75px;
   font-size: 2.5rem;
@@ -116,9 +114,9 @@ input[type="file"] {
 }
 
 #image {
-  // background: #1edf85;
+
   position: absolute;
-  display: none !important;
+  // display: none !important;
 
 }
 

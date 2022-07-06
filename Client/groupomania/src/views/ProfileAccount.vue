@@ -85,15 +85,6 @@ export default {
        return moment();
     }, 
        //! TEST MOMENT SANS RESULTAT
-    // changeDate: function () {
-    //   const postsDate = new Date();
-    //   moment(postsDate).format("DD.MM.YY");
-    //   this.printdata[0].name = postsDate;
-    // },
-    // created() {
-    //   this.changeDate();
-    // },
-    //! FIN TEST MOMENT
     getOneAccount() {
       let url = `http://localhost:3000/api/auth/${this.userAccount.userId}`;
       let options = {
@@ -123,7 +114,7 @@ export default {
         .then((response) => {
           console.log(response);
           localStorage.clear();
-          alert("Suppression du compte confirmée ! ");
+          alert(showModal());
         })
         .then(this.$router.push("/signup"))
         .catch((error) => console.log(error));

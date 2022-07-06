@@ -2,19 +2,20 @@ const fs = require('fs');
 const { Comment, User } = require('../models/index');
 const db = require("../models");
 
-// Création d'une réponse 
+//: Création Commentaire
 exports.createComment = (req, res, next) => {
     const comment = {
         userId: req.decodedToken.userId,
         messageId: req.body.messageId,
         content: req.body.content
     };
+    console.log(req.messageId);
     Comment.create(comment)
-        .then(() => res.status(201).json({ message: "Réponse envoyée !" }))
+        .then(() => res.status(201).json({ message: "Commentaire envoyée !" }))
         .catch(error => res.status(400).json({ error }));
 };
 
-// Obtention des réponses 
+//: Affichage des Commentaires 
 exports.getAllComments = (req, res, next) => {
     Comment.findAll({
         include:User,
@@ -25,14 +26,14 @@ exports.getAllComments = (req, res, next) => {
         .catch(error => res.status(400).json({ error }));
 };
 
-// Obtention d'une réponse 
+//: Affichage d'un Commentaire
 exports.getOneComment = (req, res, next) => {
     Comment.findOne({ where: { id: req.params.id } })
         .then((comment) => res.status(200).json(message))
         .catch(error => res.status(404).json({ error }));
 };
 
-// Suppression d'une réponse 
+//: Suppression d'un Commentaire 
 
 exports.deleteComment = (req, res, next) => {
   Comment.findOne({ where: { id: req.params.id } }) 

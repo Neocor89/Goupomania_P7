@@ -13,7 +13,7 @@
   font-family: $font-primary;
   font-weight: $w600;
   height: 40px;
-  background: #3fdd2a;
+  // background: #3fdd2a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,8 +25,6 @@
 .PostComment_data-employee {
   display: flex;
   align-items: center;
-
-
 }
 
 .PostComment_logoUser {
@@ -47,10 +45,6 @@
   }
 }
 
-.PostComment_text {
-background: rgb(207, 122, 122);
-}
-
 textarea {
   height: 70px;
   width: 100%;
@@ -64,14 +58,13 @@ textarea::placeholder {
 
 .PostComment_submit {
   @include submit-btn-responsive;
-  width: 18%;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  font-size: 1rem; 
+  width: 20%;
+  margin-left: 20px;
+  padding: 0 25px 0 25px;
+  font-size: 1rem;
   @include phone-screen {
-    width: 40%; 
+    width: 22%; 
     @include submit-btn-responsive;
-    // background: #3fdd2a; 
     padding: 2px;
     
   }

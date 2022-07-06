@@ -45,10 +45,10 @@
 
 <script>
 /*
-Cor 
-Beni 
-beni@email.com 
-BeniCor89
+Ben
+C 
+toto@example.com 
+Testben@1
 */
 export default {
   name: "Login",
@@ -85,7 +85,7 @@ export default {
             localStorage.setItem("token", res.token);
             localStorage.setItem("isAdmin", res.isAdmin);
             console.log(localStorage);
-            this.$router.push("list");
+            this.$router.push("/list");
           } else {
             alert(" Le mot de passe indiqué est incorrect ! ");
           }

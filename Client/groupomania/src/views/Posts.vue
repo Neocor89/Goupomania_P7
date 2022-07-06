@@ -30,7 +30,7 @@
         <div class="Posts_upload-image">
           <label for="image" class="Posts_create-image">Ajouter une image
           <i class="fa-solid fa-image Posts_upload-icon"></i>
-            <input type="file" ref="image" @change="onFileSelected" id="image"  accept="image/png, image/jpg, image/gif, image/jpeg" placeholder="importer une image"/>
+            <input type="file" @change="onFileSelected" id="image"  accept="image/*" placeholder="importer une image"/>
           </label>
             <!-- <input v-model="inputMessage.url_image"/> -->
         </div>
@@ -53,7 +53,7 @@ export default {
       inputMessage: {
         title: "",
         content: "",
-        url_image: null,
+        url_image: "",
       },
       userId: "",
     };
@@ -63,24 +63,26 @@ export default {
     console.log(this.userId);
   },
   methods: {
-    onFileSelected() {
-         this.image = this.$refs.image.files[0];
-      this.selectedFile = URL.createObjectURL(this.image)
+     onFileSelected(event) {
+      // if(event.target.files.length) return;
+      this.selectedFile = event.target.files[0]
     },
 
     sendMessage() {
-      let formData = new FormData();
-      formData.append('file', this.selectedFile);
-      formData.append('userId', this.userId);
-      formData.append('title', this.inputMessage.title);
-      formData.append('content', this.inputMessage.content);
+      let contentMessage = {
+      file: this.selectedFile,
+      userId: this.userId,
+      title: this.inputMessage.title,
+      content: this.inputMessage.content
+    }
+      console.log(contentMessage);
       let url = "http://localhost:3000/api/posts/new";
       let options = {
         method: "POST",
-        body: JSON.stringify(Object.fromEntries(formData)),
+        body: JSON.stringify(contentMessage),
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
-          'Content-type': 'application/json'
+          "Content-Type": "application/json",
         },
       };
       fetch(url, options)

@@ -36,13 +36,13 @@
           name="content"
           class="form-control PostComment_text"
           v-model="content"
-          v-if="comment.userId == userId"
+          v-if="comment.userId !== userId|| isAdmin == true"
           placeholder="Espace commentaire"
           required
         ></textarea>
         <!--  v-if="comment.userId == userId" ajouté à PostComment_submit + PostComment_text -->
       
-      <button class="PostComment_submit" title="Commenter" v-if="comment.userId == userId" @click="createComment()">
+      <button class="PostComment_submit" title="Commenter" v-if="comment.userId !== userId || isAdmin == true" @click="createComment()">
         Envoi
       </button>
     </div>
@@ -62,18 +62,16 @@ export default {
       content: "",
       isAdmin: "",
       userId: "",
-      messageId: ""
     };
   },
   props: {
     messageId: Number,
     messageUserId: Number,
   }, // 
-  mounted() {
+  mounted(messageId) {
     this.userId = JSON.parse(localStorage.getItem("userId"));
     this.isAdmin = JSON.parse(localStorage.getItem("isAdmin"));
-    console.log(localStorage);
-    let url = "http://localhost:3000/api/comments/" + this.messageId + "/display";
+    let url = `http://localhost:3000/api/comments/${messageId}/display`;
     let options = {
       method: "GET",
       headers: {
@@ -99,6 +97,7 @@ export default {
         content: this.content,
         messageId: this.messageId,
       };
+         console.log(inputContent);
       if (!this.content) {
         alert("Commentaire requis");
       } else {
