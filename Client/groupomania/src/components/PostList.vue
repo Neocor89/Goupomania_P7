@@ -95,7 +95,8 @@ export default {
       fetch(url, options)
         .then((response) => {
           console.log(response);
-          window.location.reload(showModal());
+          alert("Votre Post à bien été supprimé !")
+          window.location.reload();
         })
         .catch((error) => console.log(error));
     },

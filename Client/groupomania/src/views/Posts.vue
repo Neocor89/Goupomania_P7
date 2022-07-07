@@ -30,9 +30,8 @@
         <div class="Posts_upload-image">
           <label for="image" class="Posts_create-image">Ajouter une image
           <i class="fa-solid fa-image Posts_upload-icon"></i>
-            <input type="file" @change="onFileSelected" id="image"  accept="image/*" placeholder="importer une image"/>
+            <input type="file" @change="onFileSelected( $event )" id="image"  accept="image/*" placeholder="importer une image"/>
           </label>
-            <!-- <input v-model="inputMessage.url_image"/> -->
         </div>
       </form>
         </div>
@@ -64,8 +63,8 @@ export default {
   },
   methods: {
      onFileSelected(event) {
+       this.selectedFile = event.target.files[0]
       // if(event.target.files.length) return;
-      this.selectedFile = event.target.files[0]
     },
 
     sendMessage() {
@@ -93,7 +92,7 @@ export default {
             window.location.reload();
             this.inputMessage = {};
           } else {
-            alert("Votre Post à bien été reçu ");
+            alert("Post envoyé !");
           }
         })
         .then(this.$router.push("/list"))

@@ -2,15 +2,15 @@ const { Post } = require("../models/index");
 const fs = require('fs');
 const db = require("../models");
 
-// Création d'un Post
+//: Création Post
 exports.createMessage = (req, res, next) => {
   let imageUrl = null;
-  console.log('ABCDE');
-  console.log(req);
   if (req.file) {
     imageUrl = `${req.protocol}://${req.get("host")}/images/${
       req.file.filename
     }`;
+    console.log('ABCDE');
+    console.log(imageUrl);
   }
   const post = {
     userId: req.body.userId,

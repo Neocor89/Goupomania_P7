@@ -12,7 +12,7 @@
         <span class="card-header col-md-4 ProfileAccount_data"> {{ userAccount.lastname }} </span>
       </div>
       <div>
-      <ModalSlot v-show="isModalVisible" @close="closeModal" infoGroupomania="Souhaitez vous supprimer votre compte ?" />
+      <!-- <ModalSlot v-show="isModalVisible" @close="closeModal" infoGroupomania="Souhaitez vous supprimer votre compte ?" /> -->
       </div>
       <div class="ProfileAccount_inscription">
       <p class="card-body ProfileAccount_date-inscription">
@@ -20,7 +20,7 @@
         <span class="card-body">{{ userAccount.createdAt | moment("DD.MM.YY") }}</span>
       </p>
       </div>
-      <div @click="showModal"> <!-- VERIFIER SI FONCTIONNE -->
+      <div> <!-- VERIFIER SI FONCTIONNE @click="showModal" -->
         <button @click="deleteAccount" class="ProfileAccount_delete">
           Supprimez votre compte
         </button>
@@ -41,7 +41,7 @@ export default {
   name: "ProfileAccount",
   data() {
     return {
-      isModalVisible: false, //: Lien Modal
+      // isModalVisible: false, //: Lien Modal
       userAccount: {
         userId: localStorage.getItem("userId"),
         firstname: "",
@@ -73,14 +73,14 @@ export default {
       .catch((error) => console.log(error));
   },
   methods: {
-    showModal() {
-      //: Lien Modal
-      this.isModalVisible = true;
-    },
-    closeModal() {
-      //: Lien Modal
-       this.isModalVisible = false;
-    },
+    // showModal() {
+    //   //: Lien Modal
+    //   this.isModalVisible = true;
+    // },
+    // closeModal() {
+    //   //: Lien Modal
+    //    this.isModalVisible = false;
+    // },
      moment: function () {
        return moment();
     }, 
@@ -114,7 +114,7 @@ export default {
         .then((response) => {
           console.log(response);
           localStorage.clear();
-          alert(showModal());
+          alert("Souhaitez vous supprimer ce compte ?");
         })
         .then(this.$router.push("/signup"))
         .catch((error) => console.log(error));

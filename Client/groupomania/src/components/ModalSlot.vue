@@ -28,7 +28,6 @@ export default {
     infoGroupomania: String
   },
   methods: {
-    // const infoGroupomania = ""
     close() {
       this.$emit('close');
     }
