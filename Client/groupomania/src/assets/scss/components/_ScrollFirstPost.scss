@@ -1,0 +1,33 @@
+.ScrollFirstPost_linkContainer {
+  // background: #000;
+  border-radius: 30px;
+  padding: 2px;
+  scroll-behavior: smooth;
+  @include tablet-screen {
+    font-size: 2.3rem;
+  
+  }
+}
+
+.ScrollFirstPost_iconScroll {
+  text-decoration: none;
+  scroll-behavior: smooth;
+  color: $col-prim;
+}
+
+@include tablet-screen {
+
+}
+
+
+/* -----------------------------------
+::: ScrollComponent component style :::
+------------------------------------ */
+
+.ScrollComponent_linkChild {
+  position: fixed;
+  scroll-behavior: smooth;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}

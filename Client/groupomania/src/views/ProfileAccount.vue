@@ -31,12 +31,10 @@
 
 <script>
 import Navigation from "../components/Navigation";
-import ModalSlot from "../components/ModalSlot";
 import moment  from 'moment/dist/moment'
 export default {
   components: {
     Navigation,
-    ModalSlot,
   },
   name: "ProfileAccount",
   data() {

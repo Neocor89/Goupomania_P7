@@ -2,8 +2,8 @@
   <!-- 
    : COMMENTS COMPONENT  
   -->
+    <ScrollFirstPost />
   <div class="PostComment_component">
-
     <div v-for="comment in comments" :key="comment.id" class="PostComment_info-container">
 
       <div class="PostComment_info-creation">
@@ -50,8 +50,10 @@
 
 <script >
 import moment  from 'moment'
+import ScrollFirstPost from "../components/ScrollFirstPost.vue"; 
 export default {
   name: "PostComments",
+  components: { ScrollFirstPost },
     props: {
       messageId: Number,
       messageUserId: Number,
