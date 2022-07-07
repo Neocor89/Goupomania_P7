@@ -2,39 +2,66 @@
     
 }
 
+@include tablet-screen {
+    
+}
+
 .PostComment_info-container {
-  background: #494848;
   display: flex;
   align-items: center;
 }
 
 .PostComment_info-creation {
   font-family: $font-primary;
-  font-weight: $w600;
-  height: 40px;
+  font-weight: $w500;
+  font-size: $fSize-small;
+  height: 100px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  flex-direction: column;
+  @include comment-background;
   flex: 2;
-  margin-top: 10px;
-  
-}
-
-.PostComment_data-employee {
-  display: flex;
-  align-items: center;
-}
-
-.PostComment_logoUser {
-  font-size: $fSize-medium;
-  padding: 0 20px;
+  // margin-bottom: 10px; 
+  padding:10px 0 15px 50px;
   @include phone-screen {
-    font-size: $fSize-logo;
+    padding-left: 30px;
   }
 }
+
+.PostComment_info-currentUser {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: $font-tercary;
+  font-size: $fSize-medium;
+  font-weight: $w500;
+  padding: 5px;
+  width: 240px;
+  @include phone-screen {
+    font-size: $fSize-small;
+    width: 210px;
+  }
+}
+
+.PostComment_info-logoUser {
+  margin-top: 5px;
+  font-size: $fSize-logo;
+  @include phone-screen {
+    font-size: $fSize-medium;
+  }
+}
+
 .PostComment_link {
   flex-basis: 50px;
-  color: $col-danger;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  color: $col-prim;
+  @include phone-screen {
+    flex-basis: 35px;
+    height: 30px;
+  }
 }
 
 .PostComment_area {
@@ -56,15 +83,17 @@ textarea::placeholder {
 
 .PostComment_submit {
   @include submit-btn-responsive;
-  width: 20%;
+  width: 35%;
   margin-left: 20px;
   padding: 0 25px 0 25px;
   font-size: 1rem;
   @include phone-screen {
-    width: 22%; 
+    width: 27%; 
     @include submit-btn-responsive;
-    padding: 2px;
-    
+    padding: 2px; 
   }
+}
 
+.PostComment_delete-option {
+  cursor: pointer;
 }

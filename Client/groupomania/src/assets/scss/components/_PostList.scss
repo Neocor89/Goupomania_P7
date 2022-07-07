@@ -23,9 +23,6 @@ i.fa-solid.fa-power-off:hover {
 
 .Postlist__container {
   @include post-background;
-  @include phone-screen {
-    
-  }
 }
 
 .Postlist__component {
@@ -59,15 +56,16 @@ i.fa-solid.fa-power-off:hover {
 .Postlist__title {
   font-weight: $w700;
   font-family: $font-primary;
-  font-size: $fSize-medium;
+  font-size: $fSize-classic;
   @include phone-screen {
     margin: 10px 0 20px 0;
+    font-size: $fSize-medium;
   }
 }
 
 .Postlist__content {
   font-family: $font-primary;
-  font-size: $fSize-medium;
+  font-size: $fSize-classic;
   @include phone-screen {
     font-size: $fSize-small;
   }
@@ -75,29 +73,33 @@ i.fa-solid.fa-power-off:hover {
 
 .Postlist__delete_post {
   text-decoration: none;
-  width: 9%;
+  // width: 9%;
   padding: 5px;
   display: flex;
-  border-radius: 9px;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
   @include tablet-screen {
-    width: 10%;
+    // width: 10%;
     padding: 3px;
   }
   @include phone-screen {
-    border-radius: 9rem;
+    // border-radius: 9rem;
     padding: 2px 25px;
   }
 }
+
 .Postlist__delete_post i {
   color: $col-danger;
-  font-size: $fSize-classic;
+  font-size: $fSize-logo;
   padding: 10px;
   cursor: pointer;
+  @include tablet-screen {
+    font-size: $fSize-classic;
+    
+  }
   @include phone-screen {
-    font-size: $fSize-small;
+    font-size: $fSize-medium;
     padding: 12px 0;
   }
 }

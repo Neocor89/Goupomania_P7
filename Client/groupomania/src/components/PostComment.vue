@@ -7,12 +7,13 @@
     <div v-for="comment in comments" :key="comment.id" class="PostComment_info-container">
 
       <div class="PostComment_info-creation">
-        <span class="PostComment_data-employee">
-          <i class="fas fa-user-circle" > </i> posté par
-          {{ comment.firstname }} {{ comment.lastname }} le
-          {{ comment.createdAt | moment(" DD.MM.YY à HH:mm") }}
-        </span
-        >
+        <span>
+          <div class="PostComment_info-currentUser">
+            <i class="fas fa-user-circle PostComment_info-logoUser" > </i> posté par
+            {{ comment.firstname }} {{ comment.lastname }} le
+            {{ comment.createdAt | moment(" DD.MM.YY à HH:mm") }}
+          </div>
+        </span>
         {{ comment.content }}
       </div>
        <br />
@@ -20,8 +21,8 @@
       <a class="PostComment_link">
         <i
           class="fas fa-trash-alt PostComment_delete-option"
-           v-if="comment.userId == userId || isAdmin == true"
-          @click="deleteComment(comment.userId)"
+           v-if="comment.id == userId || isAdmin == true"
+          @click="deleteComment(comment.id)"
           title="suppression administrateur"
         >
         </i>

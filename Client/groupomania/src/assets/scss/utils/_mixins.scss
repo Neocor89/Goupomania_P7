@@ -41,7 +41,11 @@ padding-right: 30px;
 }
 
 @mixin post-background {
-  background-image: radial-gradient(circle at bottom right, rgb(255,255,255),rgb(255,228,203),rgb(252,216,187));
+  background-image: radial-gradient(circle at bottom right, rgb(255,255,255),rgb(255, 221, 188),rgb(255, 189, 135));
+}
+
+@mixin comment-background {
+  background-image: radial-gradient(circle at bottom right, rgb(255, 255, 255),rgb(255, 240, 225),rgb(255, 236, 221));
 }
 
 @mixin nav-background {
@@ -91,19 +95,16 @@ padding-right: 30px;
   user-select: $nothing;
   -webkit-user-select: $nothing;
   white-space: nowrap;
-  // margin: 25px 0 30px 0;
 }
 
 @mixin modal-btn-responsive {
   border: none;
-  // border-radius: 5rem;
   color: $light;
   cursor: pointer;
   display: inline-block;
   font-size: $button-size;
   font-weight: $w500;
   font-family: $font-tercary;
-  // line-height: 1;
   padding: 6px 15px;
   outline: transparent;
   margin: .8rem 0 .1rem 0;
