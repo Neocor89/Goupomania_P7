@@ -40,11 +40,12 @@ i.fa-solid.fa-power-off:hover {
   font-family: $font-tercary;
   @include phone-screen {
     margin: 0 10px 0 0;
-    font-size: $fSize-small;
+    font-size: 1.05rem;
+    font-weight: $w800;
   }
 }
 
-.employee_avatar {
+.Postlist__avatarEmployee {
   width: 40px;
   height: 40px;
   object-fit: cover;
@@ -53,38 +54,53 @@ i.fa-solid.fa-power-off:hover {
   }
 }
 
+.Postlist__postCreated {
+  font-family: $font-primary;
+  font-weight: $w500;
+  font-size: .97rem;
+  margin-top: 3px;
+  @include phone-screen  {
+    font-size: .92rem;
+    font-weight: $w600;
+  }
+}
+
 .Postlist__title {
   font-weight: $w700;
   font-family: $font-primary;
   font-size: $fSize-classic;
-  @include phone-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include tablet-screen  {
     margin: 10px 0 20px 0;
     font-size: $fSize-medium;
+  }
+  @include phone-screen  {
+    font-size: $button-size;
+
   }
 }
 
 .Postlist__content {
   font-family: $font-primary;
   font-size: $fSize-classic;
-  @include phone-screen {
-    font-size: $fSize-small;
+  @include tablet-screen {
+    font-size: $fSize-medium;
   }
 }
 
 .Postlist__delete_post {
   text-decoration: none;
-  // width: 9%;
   padding: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
   @include tablet-screen {
-    // width: 10%;
     padding: 3px;
   }
   @include phone-screen {
-    // border-radius: 9rem;
     padding: 2px 25px;
   }
 }

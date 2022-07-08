@@ -78,6 +78,7 @@ padding-right: 30px;
 
 @mixin submit-btn-responsive {
   background: linear-gradient(to bottom right, $gradient-btn, $col-prim);
+  opacity: 0.9;
   border: 0;
   border-radius: 0.75rem;
   color: $light;
@@ -139,7 +140,7 @@ padding-right: 30px;
   width: 200px;
 }
 // @mixin tablet-large-screnn {
-//   @media screen and (max-width: map-get($breakpoints, md-screen-size1)) {
+//   @media screen and (min-width: map-get($breakpoints, md-screen-size1)) {
 //       @content;
 //   }
 // }

@@ -21,7 +21,7 @@ export default {
       }, 220)
     },
     scrollListener: function (e) {
-      this.visible = window.scrollY > 150
+      this.visible = window.scrollY > 550
     }
   },
   mounted: function () {

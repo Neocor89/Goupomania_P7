@@ -1,7 +1,7 @@
 <template>
   <ScrollComponent>
       <a class="ScrollFirstPost_linkContainer">
-        <i class="fa-solid fa-circle-arrow-up ScrollFirstPost_iconScroll"></i>
+        <i class="fa-solid fa-circle-chevron-up ScrollFirstPost_iconScroll"></i>
       </a>
   </ScrollComponent>
 </template>
@@ -16,7 +16,9 @@ components: {
 </script>
 
 <style lang="scss" scoped>
-
+body {
+    scroll-behavior: smooth;
+}
 /* ----------------------------
 :: Imports utils scss folders ::
 ---------------------------- */

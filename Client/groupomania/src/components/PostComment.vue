@@ -9,12 +9,14 @@
       <div class="PostComment_info-creation">
         <span>
           <div class="PostComment_info-currentUser">
-            <i class="fas fa-user-circle PostComment_info-logoUser" > </i> posté par
-            {{ comment.firstname }} {{ comment.lastname }} le
-            {{ comment.createdAt | moment(" DD.MM.YY à HH:mm") }}
+            <i class="fas fa-user-circle PostComment_info-logoUser" > </i> Posté par
+            {{ comment.userId }} {{ comment.user }} le
+            {{ moment(comment.createdAt) }}
           </div>
         </span>
-        {{ comment.content }}
+        <div class="PostComment_info-commentUser">
+          <p class="PostComment_commentUser">{{ comment.content }}</p>
+        </div>
       </div>
        <br />
        
@@ -34,12 +36,12 @@
           type="text"
           title="Ecrivez un commentaire"
           name="content"
-          class="form-control PostComment_text"
+          class="form-control"
           v-model="content"
           placeholder="Espace commentaire"
           required
         ></textarea>
-        <!--  v-if="comment.userId == userId" ajouté à PostComment_submit + PostComment_text -->
+        <!--  v-if="comment.userId == userId" ajouté à PostComment_submit + class="form-control PostComment_text" -->
       
       <button class="PostComment_submit" title="Commenter"  @click="createComment(comment.id)">
         Envoi
@@ -89,9 +91,8 @@ export default {
       .catch((error) => console.log(error));
   },
   methods: {
-    moment: function () {
-      //: Essayé this.$moment
-    return moment();
+    moment: function (value) {
+    return  moment(value).format("DD.MM.YY à HH:mm");
   }, 
     createComment() {
       let inputContent = {
