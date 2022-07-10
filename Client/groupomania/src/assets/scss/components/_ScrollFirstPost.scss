@@ -1,5 +1,8 @@
+/* -----------------------------------
+::: ScrollComponent component style :::
+------------------------------------ */
+
 .ScrollFirstPost_linkContainer {
-  // background: #000;
   border-radius: 30px;
   padding: 2px;
   font-size: 2.7rem;
@@ -12,22 +15,13 @@
 .ScrollFirstPost_iconScroll {
   text-decoration: none;
   scroll-behavior: smooth;
-  color:     $col-linkActivate;
+  color: $deconnect-btn;
   border-radius: 39rem;
   @include phone-screen {
     display: none;
 
   }
 }
-
-@include tablet-screen {
-
-}
-
-
-/* -----------------------------------
-::: ScrollComponent component style :::
------------------------------------- */
 
 .ScrollComponent_linkChild {
   position: fixed;

@@ -10,7 +10,7 @@
         <span>
           <div class="PostComment_info-currentUser">
             <i class="fas fa-user-circle PostComment_info-logoUser" > </i> Posté par
-            {{ comment.userId }} {{ comment.user }} le
+            {{ comment.User.firstname }} {{ comment.User.lastname }} le
             {{ moment(comment.createdAt) }}
           </div>
         </span>
@@ -23,14 +23,14 @@
       <a class="PostComment_link">
         <i
           class="fas fa-trash-alt PostComment_delete-option"
-           v-if="comment.id == userId || isAdmin == true"
+           v-if="comment.userId == userId || isAdmin == true"
           @click="deleteComment(comment.id)"
           title="suppression administrateur"
         >
         </i>
       </a>
     </div>
-<!-- v-if="comment.userId == userId || isAdmin == true" => enlevé pour css remettre en dessous PostComment_delete-option -->
+
     <div class="PostComment_area">
         <textarea
           type="text"
@@ -41,8 +41,7 @@
           placeholder="Espace commentaire"
           required
         ></textarea>
-        <!--  v-if="comment.userId == userId" ajouté à PostComment_submit + class="form-control PostComment_text" -->
-      
+
       <button class="PostComment_submit" title="Commenter"  @click="createComment(comment.id)">
         Envoi
       </button>

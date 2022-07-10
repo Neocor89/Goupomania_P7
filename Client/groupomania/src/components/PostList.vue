@@ -6,26 +6,23 @@
     <div v-for="message in messages" :key="message.id" class="Postlist__component card col col-md-8">
       <div class="Postlist__container card-header">
         <img src="../assets/images/avatar-placeholder.png" alt="avatar utilisateur" class="Postlist__avatarEmployee">
-        <!-- 
-          Remplacement pour le responsive
-          <i class="fas fa-user-circle Postlist__avatarEmployee"> </i> 
-          -->
         <div>
         <span class="employe_info card-title"
-          >{{ message.user.firstname }} {{ message.user.lastname }}</span>
+          >{{ message.user.firstname }} {{ message.user.lastname }} </span>
           <div class="Postlist__postCreated">
           {{ moment(message.createdAt) }}
           </div>
         </div>
       </div>
       <div class="card-text card-body">
-        <p class="Postlist__title">{{ message.title }}</p>
+        <p class="Postlist__title" title="title post">{{ message.title }}</p>
       </div>
       <div class="card-text card-body">
         <p class="Postlist__content">{{ message.content }}</p>
       </div>
       <div class="card-text card-body">
-        {{ message.url_image }}
+        <!-- <input :src="message.url_image" alt=""/> -->
+        {{message.url_image}}
       </div>
 
       <a class="Postlist__delete_post">
@@ -54,6 +51,7 @@ export default {
   },
   data() {
     return {
+       message: "",
       firstname: "",
       lastname: "",
       userId: "",
@@ -78,7 +76,6 @@ export default {
         console.log(data);
         this.messages = data;
         console.log(this.messages);
-        console.log("Time moment is " + new Date());
       })
       .catch((error) => console.log(error));
   },

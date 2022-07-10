@@ -9,8 +9,7 @@ exports.createMessage = (req, res, next) => {
     imageUrl = `${req.protocol}://${req.get("host")}/images/${
       req.file.filename
     }`;
-    console.log('ABCDE');
-    console.log(imageUrl);
+    console.log(req.file);
   }
   const post = {
     userId: req.body.userId,
@@ -23,18 +22,20 @@ exports.createMessage = (req, res, next) => {
     .catch((error) => res.status(400).json({ error }));
 };
 
-//Supression Post
+//: Supression Post
 exports.deleteMessage = (req, res, next) => {
   Post.findOne({ where: { id: req.params.id } })
     .then((post) => {
+      const filename = post.url_image.split('/images/')[1];
+      fs.unlink(`images/${filename}`, () => {
       Post.destroy({ where: { id: req.params.id } })
         .then(() => res.status(200).json({ message: "Votre Post à bien été supprimé" }))
         .catch((error) => res.status(400).json({ error }));
     })
-    .catch((error) => res.status(500).json({ error }));
-};
+  });
+}
 
-// Obtention d'un message
+//: Obtenir un Post
 exports.getOneMessage = (req, res, next) => {
   db.Post.findByPk(req.params.id, {
     include: [
@@ -53,7 +54,7 @@ exports.getOneMessage = (req, res, next) => {
     .catch((error) => res.status(404).json({ error }));
 };
 
-// Obtention des Post
+//: Obtenir des Post
 exports.getAllMessages = (req, res, next) => {
   Post.findAll({
     include: ["user", "comments"],

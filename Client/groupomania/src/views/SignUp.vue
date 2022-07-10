@@ -43,7 +43,7 @@
           type="email"
           id="email"
           name="email"
-          title="Votre email"
+          title="email avec .com et @"
           class="SignUp_page-field form-control"
           placeholder="Email"
           required
@@ -57,7 +57,7 @@
           type="password"
           id="password"
           name="password"
-          title="Votre mot de passe"
+          title="min 8 caractères : 1 Maj, 1 minuscule, 1 chiffre"
           class="SignUp_page-field form-control"
           placeholder="Mot de passe"
           required
@@ -66,7 +66,7 @@
         />
       </div>
       <p v-show="false" class="SignUp_page-infoPassword">Minimum 8 caractères avec 1 Majuscule, 1 minuscule et un chiffre</p>
-      <button type="submit" title="Inscription" class="SignUp_page-submit">Inscription</button>
+      <button type="submit" alt="submit button" class="SignUp_page-submit">Inscription</button>
     </form>
 
     <nav class="SignUp_page-link">
@@ -80,11 +80,6 @@
 
 
 <script>
-
-//TODO
-//TODO => REGLER V-SHOW || UTILISER MODAL
-//TODO => VERIF REDIRECTION PAGE SIGNUP VERS POSTS
-//TODO
 
 export default {
   name: 'SignUp',

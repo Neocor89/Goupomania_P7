@@ -4,7 +4,7 @@
     <div class="Posts_page">
       <h1 class="Posts_title">Créer une publication</h1>
         <div class="form-group Posts_form">
-      <form id="form-signup" enctype="multipart/form-data">
+      <form id="form-signup" >
         <label for="title" class="Posts_create-title">Titre</label>
         <input
           type="text"
@@ -28,9 +28,10 @@
           placeholder="Quoi de neuf ?">
         </textarea>
         <div class="Posts_upload-image">
-          <label for="image" class="Posts_create-image">Ajouter une image
+          <label class="Posts_create-image">Ajouter une image
           <i class="fa-solid fa-image Posts_upload-icon"></i>
-            <input type="file" @change="onFileSelected( $event )" id="image"  accept="image/*" placeholder="importer une image"/>
+            <input type="file" @change="onFileSelected" id="image" placeholder="importer une image"/>
+            <!-- <input type="image" v-model="inputMessage.url_image"> -->
           </label>
         </div>
       </form>
@@ -52,8 +53,9 @@ export default {
       inputMessage: {
         title: "",
         content: "",
-        url_image: "",
+        // file: "",
       },
+      url_image: null,
       userId: "",
     };
   },
@@ -63,28 +65,28 @@ export default {
   },
   methods: {
      onFileSelected(event) {
-       this.selectedFile = event.target.files[0]
-      // if(event.target.files.length) return;
+       this.url_image = event.target.files[0]
+       console.log(event.target.files[0]);
+
     },
 
-    sendMessage() {
-      let contentMessage = {
-      file: this.selectedFile,
-      userId: this.userId,
-      title: this.inputMessage.title,
-      content: this.inputMessage.content
-    }
-      console.log(contentMessage);
+    async sendMessage(event) {
+      const formData = new FormData();
+      formData.append('title', this.inputMessage.title)
+      formData.append('userId', this.userId)
+      formData.append('content', this.inputMessage.content)
+      formData.append('images', this.url_image, this.url_image.name)
+
       let url = "http://localhost:3000/api/posts/new";
       let options = {
         method: "POST",
-        body: JSON.stringify(contentMessage),
+        body: formData,
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
-          "Content-Type": "application/json",
+          // "Content-Type": "application/json",
         },
       };
-      fetch(url, options)
+      await fetch(url, options)
         .then((res) => res.json())
         .then((res) => {
           console.log(res);

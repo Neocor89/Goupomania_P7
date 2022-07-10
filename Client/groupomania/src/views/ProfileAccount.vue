@@ -12,15 +12,14 @@
         <span class="card-header col-md-4 ProfileAccount_data"> {{ userAccount.lastname }} </span>
       </div>
       <div>
-      <!-- <ModalSlot v-show="isModalVisible" @close="closeModal" infoGroupomania="Souhaitez vous supprimer votre compte ?" /> -->
       </div>
       <div class="ProfileAccount_inscription">
       <p class="card-body ProfileAccount_date-inscription">
         Vous êtes inscrit depuis le :
-        <span class="card-body">{{ userAccount.createdAt | moment("DD.MM.YY") }}</span>
+        <span class="card-body">{{  moment(userAccount.createdAt) }}</span>
       </p>
       </div>
-      <div> <!-- VERIFIER SI FONCTIONNE @click="showModal" -->
+      <div> 
         <button @click="deleteAccount" class="ProfileAccount_delete">
           Supprimez votre compte
         </button>
@@ -71,18 +70,9 @@ export default {
       .catch((error) => console.log(error));
   },
   methods: {
-    // showModal() {
-    //   //: Lien Modal
-    //   this.isModalVisible = true;
-    // },
-    // closeModal() {
-    //   //: Lien Modal
-    //    this.isModalVisible = false;
-    // },
-     moment: function () {
-       return moment();
+     moment: function (value) {
+       return  moment(value).format("DD.MM.YY à HH:mm");
     }, 
-       //! TEST MOMENT SANS RESULTAT
     getOneAccount() {
       let url = `http://localhost:3000/api/auth/${this.userAccount.userId}`;
       let options = {

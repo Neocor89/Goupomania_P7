@@ -11,8 +11,6 @@
   align-items: center;
 }
 
-
-
 .PostComment_info-creation {
   font-family: $font-primary;
   font-weight: $w500;
@@ -27,7 +25,7 @@
   flex-direction: column;
   @include comment-background;
   flex: 2;
-  // margin-bottom: 10px; 
+
   padding:10px 0 15px 50px;
   @include phone-screen {
     padding-left: 30px;
@@ -41,31 +39,31 @@
   font-family: $font-tercary;
   font-size: $fSize-medium;
   font-weight: $w500;
-  width: 280px;
+
   padding: 2px;
   @include tablet-screen {
-    width: 255px;
     font-size: $fSize-small;
     font-weight: $w600;
   }
   @include phone-screen {
-    width: 230px;
-    font-size: .9rem;
+    font-size: .8rem;
+    margin-right: 5px;
   }
 }
 
 .PostComment_info-logoUser {
   font-size: $fSize-logo;
+  padding: 0 4px;
   @include tablet-screen {
     font-size: $fSize-classic;
   }
   @include phone-screen {
     font-size: $fSize-medium;
+    padding: 0 6px;
   }
 }
 
 .PostComment_info-commentUser {
-
   padding: 0 2px;
   max-width: 500px;
   display: flex;
@@ -74,31 +72,25 @@
   height: 50px;
   margin-top: 15px;
   font-size: $fSize-medium;
-  // white-space: nowrap;
-  // overflow: hidden;
-  @include tablet-screen {
-    
-  }
-  @include phone-screen {
-  }
+  
 }
+
 
 .PostComment_commentUser {
   font-size: .94rem;
   @include phone-screen {
-
-    max-width: 250px;
+    max-width: 290px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
-    flex-wrap: wrap;
+
+    &:hover {
+      overflow: visible;
+    }
   }
 }
 
-.PostComment_commentUser:hover {
-  overflow: visible;
-}
 
 .PostComment_link {
   flex-basis: 50px;

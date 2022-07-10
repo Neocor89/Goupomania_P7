@@ -43,16 +43,37 @@
   }
 }
 
-input:invalid {
+// :focus:before:afterinput[value=""]
+
+input {
+  border-radius: 4px;
+  font-size: 1rem;
+  margin: 0.25rem;
+  min-width: 125px;
+  padding: 0.5rem;
+  transition: border-color 0.5s ease-out;
+}
+input:optional {
+  outline: none;
+}
+input:required:valid {
+  border-color: $col-fieldValid;
+}
+input:focus:before:invalid {
   border-color: $col-danger;
 }
-
-input:invalid[type="text"]::after {
-  content: "Le Nom ou Prénom ne doit pas contenir de choffre ou caractère spécial";
+input:required:focus:valid {
+  background: url("https://api.iconify.design/lucide:check-circle.svg") no-repeat 95% 50% $col-fieldValid;
+  background-size: 18px;
+}
+input:focus:invalid {
+  background: url("https://api.iconify.design/lucide:fingerprint.svg") no-repeat 95% 50%  $col-fieldInvalid;
+  background-size: 18px;
 }
 
-input:invalid[type="email"]::after {
-  content: "L'email doit obligatoireùent contenir @ et .";
+input:focus:invalid[type="password"] {
+  background: url("https://api.iconify.design/lucide:fingerprint.svg") no-repeat 87% 50%  $col-fieldInvalid;
+  background-size: 18px;
 }
 
 .SignUp_page-link {
@@ -70,8 +91,8 @@ input:invalid[type="email"]::after {
 }
 
 .SignUp_page-submit {
+  @include submit-btn;
   @include phone-screen {
-    @include submit-btn;
     margin-bottom: 0;
   }
 }

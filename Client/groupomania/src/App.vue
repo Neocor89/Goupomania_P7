@@ -5,9 +5,6 @@
 </template>
 
 <script>
-// //+ :: Import Bootstrap ::
-// import "bootstrap/dist/css/bootstrap.min.css";
-
 
 export default {
 
@@ -32,7 +29,7 @@ nav {
     color: #2c3e50;
 
     &.router-link-exact-active {
-      color: #ffbfc1;
+      color: #dc2f02;
     }
   }
 }
