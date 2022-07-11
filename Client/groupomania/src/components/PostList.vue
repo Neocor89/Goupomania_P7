@@ -21,7 +21,7 @@
         <p class="Postlist__content">{{ message.content }}</p>
       </div>
       <div class="card-text card-body">
-        <img class="PostList_image" :src="message.url_image"/>
+        <img v-show="message.url_image" class="PostList_image" :src="message.url_image"/>
       </div>
 
       <a class="Postlist__delete_post">
