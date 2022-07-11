@@ -26,7 +26,7 @@ i.fa-solid.fa-power-off:hover {
 }
 
 .Postlist__component {
-  width: 550px; //++++++++++++
+  width: 640px; //++++++++++++
   border-radius: .45rem;
   margin-bottom: 60px;
   @include phone-screen {
@@ -37,8 +37,9 @@ i.fa-solid.fa-power-off:hover {
 
 .employe_info {
   font-size: $fSize-classic;
-  margin-left: 15px;
-  font-weight: $w500;
+  color:  $full-dark;
+  margin-left: 5px;
+  font-weight: $w900;
   font-family: $font-tercary;
   @include phone-screen {
     margin: 0 10px 0 0;
@@ -60,7 +61,8 @@ i.fa-solid.fa-power-off:hover {
   font-family: $font-primary;
   font-weight: $w500;
   font-size: .97rem;
-  margin-top: 3px;
+  // margin-top: 3px;
+  margin: 3px 0 3px 0;
   @include phone-screen  {
     font-size: .92rem;
     font-weight: $w600;
@@ -70,25 +72,32 @@ i.fa-solid.fa-power-off:hover {
 .Postlist__title {
   font-weight: $w700;
   font-family: $font-primary;
-  font-size: $fSize-classic;
+  font-size: 2.1vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 10px 0 0 0;
   @include tablet-screen  {
-    margin: 10px 0 10px 0;
-    font-size: $fSize-medium;
+    // font-size: $fSize-medium;
+    font-size: $fSize-logo;
   }
   @include phone-screen  {
-    font-size: $button-size;
+    font-size: 1.156rem;
 
   }
 }
 
 .Postlist__content {
+  white-space: pre-line;
   font-family: $font-primary;
-  font-size: $fSize-classic;
+  font-size: 1.11rem;
   @include tablet-screen {
-    font-size: $fSize-medium;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 1.11rem;
+  }
+  @include phone-screen {
+    font-size: 1.02rem;
     margin-bottom: 0;
   }
 }
@@ -96,6 +105,9 @@ i.fa-solid.fa-power-off:hover {
 .PostList_image {
   height: 230px;
   object-fit: cover;
+  @include tablet-screen {
+    margin: 0 auto 25px auto;
+  }
   @include phone-screen {
     display: flex;
     align-items: center;

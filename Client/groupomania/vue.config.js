@@ -3,6 +3,6 @@ module.exports = defineConfig({
   transpileDependencies: true,
   lintOnSave: false,
   devServer: {
-    host: 'localhost:3000',
+    host: 'localhost',
   },
 });

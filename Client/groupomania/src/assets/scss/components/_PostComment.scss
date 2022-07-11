@@ -36,53 +36,72 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 5px;
   font-family: $font-tercary;
-  font-size: $fSize-medium;
+  font-size: $fSize-small;
   font-weight: $w500;
-
+  // margin-right: 15px;
+  // padding: 0 0 30px 0;
   padding: 2px;
   @include tablet-screen {
-    font-size: $fSize-small;
+    margin-bottom: 0;
     font-weight: $w600;
+    padding: 0 0 30px 0;
   }
   @include phone-screen {
-    font-size: .8rem;
-    margin-right: 5px;
+    font-size: .82rem;
+    margin-right: 15px;
+    padding: 0 0 15px 0;
+    font-weight: $w800;
   }
 }
 
 .PostComment_info-logoUser {
-  font-size: $fSize-logo;
-  padding: 0 4px;
+  font-size: $fSize-classic;
+  padding: 0 10px;
   @include tablet-screen {
-    font-size: $fSize-classic;
+    font-size: $fSize-medium;
   }
   @include phone-screen {
-    font-size: $fSize-medium;
     padding: 0 6px;
   }
 }
 
 .PostComment_info-commentUser {
   padding: 0 2px;
-  max-width: 500px;
+  // max-width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50px;
-  margin-top: 15px;
   font-size: $fSize-medium;
+  @include phone-screen {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    width: 100%;
+
+    margin-right: 5px;
+  }
   
 }
 
 
 .PostComment_commentUser {
+  font-family: $font-primary;
   font-size: .94rem;
+  width: max-content;
+  height: max-content;
+  display: flex;
+  white-space: pre-line;
+  justify-content: center;
+  align-items: center;
+  @include tablet-screen {
+    max-width: 350px;
+
+  }
   @include phone-screen {
     max-width: 290px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: .94rem;
     display: block;
 
     &:hover {
@@ -98,6 +117,9 @@
   align-items: end;
   justify-content: center;
   color: $col-prim;
+  @include tablet-screen {
+    height: 44px; //+ Voir comportement phone
+  }
   @include phone-screen {
     flex-basis: 35px;
     height: 30px;
@@ -131,7 +153,7 @@ textarea::placeholder {
   padding: 0 25px 0 25px;
   font-size: 1rem;
   @include phone-screen {
-    width: 27%; 
+    width: 38%; 
     @include submit-btn-responsive;
     padding: 2px; 
   }
