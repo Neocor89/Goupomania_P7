@@ -64,7 +64,6 @@ exports.getAllMessages = (req, res, next) => {
     .catch((error) => res.status(400).json({ error }));
 };
 
-//Modifier un Post
 exports.updateOnePost = (req, res, next) => {
   Post.update(
     {

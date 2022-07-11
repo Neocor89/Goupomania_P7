@@ -21,8 +21,7 @@
         <p class="Postlist__content">{{ message.content }}</p>
       </div>
       <div class="card-text card-body">
-        <!-- <input :src="message.url_image" alt=""/> -->
-        {{message.url_image}}
+        <img class="PostList_image" :src="message.url_image"/>
       </div>
 
       <a class="Postlist__delete_post">
@@ -43,7 +42,7 @@
 <script>
 import PostComment from './PostComment.vue'
 import moment  from 'moment'
-/*    */
+
 export default {
   name: "PostList",
   components: {
@@ -70,12 +69,12 @@ export default {
         Authorization: "Bearer " + localStorage.getItem("token"),
       },
     };
-    fetch(url, options)
+     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
         this.messages = data;
-        console.log(this.messages);
+        console.log(this.message);
       })
       .catch((error) => console.log(error));
   },

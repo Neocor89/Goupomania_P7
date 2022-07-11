@@ -31,7 +31,6 @@
           <label class="Posts_create-image">Ajouter une image
           <i class="fa-solid fa-image Posts_upload-icon"></i>
             <input type="file" @change="onFileSelected" id="image" placeholder="importer une image"/>
-            <!-- <input type="image" v-model="inputMessage.url_image"> -->
           </label>
         </div>
       </form>
@@ -53,8 +52,8 @@ export default {
       inputMessage: {
         title: "",
         content: "",
-        // file: "",
       },
+        file: "",
       url_image: null,
       userId: "",
     };
@@ -70,10 +69,11 @@ export default {
 
     },
 
-    async sendMessage(event) {
+    async sendMessage() {
       const formData = new FormData();
       formData.append('title', this.inputMessage.title)
       formData.append('userId', this.userId)
+      formData.append('file', this.file)
       formData.append('content', this.inputMessage.content)
       formData.append('images', this.url_image, this.url_image.name)
 
@@ -83,7 +83,6 @@ export default {
         body: formData,
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
-          // "Content-Type": "application/json",
         },
       };
       await fetch(url, options)

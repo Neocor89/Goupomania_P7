@@ -38,7 +38,6 @@ export default {
   name: "ProfileAccount",
   data() {
     return {
-      // isModalVisible: false, //: Lien Modal
       userAccount: {
         userId: localStorage.getItem("userId"),
         firstname: "",
