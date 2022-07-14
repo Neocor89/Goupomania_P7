@@ -72,13 +72,12 @@ i.fa-solid.fa-power-off:hover {
 .Postlist__title {
   font-weight: $w700;
   font-family: $font-primary;
-  font-size: 2.1vw;
+  font-size: 1.7vw;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 10px 0 0 0;
   @include tablet-screen  {
-    // font-size: $fSize-medium;
     font-size: $fSize-logo;
   }
   @include phone-screen  {
@@ -105,6 +104,7 @@ i.fa-solid.fa-power-off:hover {
 .PostList_image {
   height: 230px;
   object-fit: cover;
+  margin: 0 auto 20px auto;
   @include tablet-screen {
     margin: 0 auto 25px auto;
   }

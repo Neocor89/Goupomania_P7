@@ -40,8 +40,6 @@
   font-family: $font-tercary;
   font-size: $fSize-small;
   font-weight: $w500;
-  // margin-right: 15px;
-  // padding: 0 0 30px 0;
   padding: 2px;
   @include tablet-screen {
     margin-bottom: 0;
@@ -69,15 +67,15 @@
 
 .PostComment_info-commentUser {
   padding: 0 2px;
-  // max-width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50px;
   font-size: $fSize-medium;
+  margin-top: 25px;
+  margin-bottom: 10px;
   @include phone-screen {
     margin-top: 15px;
-    margin-bottom: 10px;
     width: 100%;
 
     margin-right: 5px;
@@ -88,8 +86,8 @@
 
 .PostComment_commentUser {
   font-family: $font-primary;
-  font-size: .94rem;
-  width: max-content;
+  font-size: 0.98rem;
+  width: 345px;
   height: max-content;
   display: flex;
   white-space: pre-line;
@@ -97,6 +95,7 @@
   align-items: center;
   @include tablet-screen {
     max-width: 350px;
+    
 
   }
   @include phone-screen {
@@ -117,8 +116,8 @@
   align-items: end;
   justify-content: center;
   color: $col-prim;
+  height: 44px;
   @include tablet-screen {
-    height: 44px; //+ Voir comportement phone
   }
   @include phone-screen {
     flex-basis: 35px;
@@ -148,12 +147,14 @@ textarea::placeholder {
 
 .PostComment_submit {
   @include submit-btn-responsive;
-  width: 35%;
+  width: 38%;
   margin-left: 20px;
   padding: 0 25px 0 25px;
-  font-size: 1rem;
+  font-size: 1.12rem;
+  @include tablet-screen {
+   padding: 0 25px;
+  }
   @include phone-screen {
-    width: 38%; 
     @include submit-btn-responsive;
     padding: 2px; 
   }
