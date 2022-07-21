@@ -52,6 +52,9 @@ img {
 
 .login_input {
   @include layout-form-field;
+  @include phone-screen {
+    height: 38px;
+  }
 }
 
 .btn_connect {

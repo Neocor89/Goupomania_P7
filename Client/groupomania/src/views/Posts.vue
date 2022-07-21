@@ -105,9 +105,11 @@ export default {
 
 <style lang="scss" scoped>
 
+
 /* ----------------------------
 :: Imports utils scss folders ::
 ---------------------------- */
+
 @import "../assets/scss/utils/_variables.scss";
 @import "@/assets/scss/utils/_mixins.scss";
 @import "@/assets/scss/utils/_breakpoints.scss";
@@ -116,5 +118,6 @@ export default {
 :: Imports scss Component :: 
 ------------------------- */
 @import "@/assets/scss/views/_Posts.scss";
+
 
 </style>
